@@ -1024,16 +1024,16 @@ function pickDisplay() {
       }
     }
 
-    if (people.length <= 0) {
-      computerEndgame();
-    }
-
     var nB =
       document.createElement("button");
       nB.setAttribute("id", "next");
       nB.setAttribute("onclick", "cTurn1()");
       nB.textContent = "Next Question";
       document.body.appendChild(nB);
+
+      if (people.length <= 1) {
+        computerEndgame();
+      }
   }
 
   function cTurn1() {
@@ -1360,10 +1360,6 @@ function pickDisplay() {
         }
       }
 
-      if (people.length <= 0) {
-        computerEndgame();
-      }
-
 
     var nB =
       document.createElement("button");
@@ -1371,6 +1367,10 @@ function pickDisplay() {
       nB.setAttribute("onclick", "cTurn2()");
       nB.textContent = "Next Question";
       document.body.appendChild(nB);
+
+      if (people.length <= 1) {
+        computerEndgame();
+      }
   }
 
   function cTurn2() {
@@ -1697,10 +1697,6 @@ function pickDisplay() {
         }
       }
 
-      if (people.length <= 0) {
-        computerEndgame();
-      }
-
 
     var nB =
       document.createElement("button");
@@ -1708,6 +1704,10 @@ function pickDisplay() {
       nB.setAttribute("onclick", "cTurn3()");
       nB.textContent = "Next Question";
       document.body.appendChild(nB);
+
+      if (people.length <= 1) {
+        computerEndgame();
+      }
   }
 
   function cTurn3() {
@@ -2034,16 +2034,16 @@ function pickDisplay() {
         }
       }
 
-      if (people.length <= 0) {
-        computerEndgame();
-      }
-
     var nB =
       document.createElement("button");
       nB.setAttribute("id", "next");
       nB.setAttribute("onclick", "cTurn4()");
       nB.textContent = "Next Question";
       document.body.appendChild(nB);
+
+      if (people.length <= 1) {
+        computerEndgame();
+      }
   }
 
   function cTurn4() {
@@ -2370,10 +2370,6 @@ function pickDisplay() {
         }
       }
 
-      if (people.length <= 0) {
-        computerEndgame();
-      }
-
     var nB =
       document.createElement("button");
       nB.setAttribute("id", "next");
@@ -2381,13 +2377,15 @@ function pickDisplay() {
       nB.textContent = "Final Guess";
       document.body.appendChild(nB);
 
+      if (people.length <= 1) {
+        computerEndgame();
+      }
+
   }
 
   function computerEndgame() {
     let eggplant = document.getElementById("next");
     eggplant.remove();
-    qTitle.remove();
-    finalButon.remove();
 
 
     ComputerGuess = people[0].fName;
