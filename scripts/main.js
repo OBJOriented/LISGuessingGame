@@ -318,6 +318,7 @@ function forceGuess() {
       document.getElementById("selector").appendChild(t9);
       document.getElementById("selector").appendChild(t10);
       document.getElementById("selector").appendChild(t11);
+      document.getElementById("selector").appendChild(t12);
       document.getElementById("selector").appendChild(t13);
       document.getElementById("selector").appendChild(t14);
       document.getElementById("character").appendChild(u);
@@ -643,6 +644,7 @@ function pickDisplay() {
       document.getElementById("characterOption").appendChild(t9);
       document.getElementById("characterOption").appendChild(t10);
       document.getElementById("characterOption").appendChild(t11);
+      document.getElementById("characterOption").appendChild(t12);
       document.getElementById("characterOption").appendChild(t13);
       document.getElementById("characterOption").appendChild(t14);
       document.getElementById("pickCharacter").appendChild(u);
