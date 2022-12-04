@@ -20,7 +20,7 @@ const guessButton = document.getElementById("guess");
   const athena = {fName:"Athena the Lorelei", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"false", female:"true", musical:"false", male:"false"};
   const nobody = {fName:"Mr. Nobody", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"false", female:"false", musical:"false", male:"true"};
   const morbus = {fName:"Morbus", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"true", female:"false", musical:"false", male:"true"};
-  const antiDon = {fName:"Anti-Matter Don West", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"true", female:"false", musical:"false", male:"true"};
+  const antiDon = {fName:"Anti-Matter Don West", doctor:"false", family:"false", age:"false", pilot:"false", military:"true", human:"true", female:"false", musical:"false", male:"true"};
   const hamish = {fName:"Hamish Rhu Glamis", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"true", female:"false", musical:"true", male:"true"};
   var people = [john,maureen,don,judy,penny,will,smith,b9,tucker,athena,nobody,morbus,antiDon,hamish];
   var shortcut;
