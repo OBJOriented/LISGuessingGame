@@ -19,10 +19,10 @@ const guessButton = document.getElementById("guess");
   const tucker = {fName:"Captain Alonso P. Tucker", doctor:"false", family:"false", age:"false", pilot:"true", military:"false", human:"true", female:"false", musical:"false", male:"true"};
   const athena = {fName:"Athena the Lorelei", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"false", female:"true", musical:"false", male:"false"};
   const nobody = {fName:"Mr. Nobody", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"false", female:"false", musical:"false", male:"true"};
-  const morbus = {fName:"Morbus", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"false", female:"false", musical:"false", male:"true"};
+  const willoughby = {fName:"Willoughby", doctor:"true", family:"false", age:"false", pilot:"false", military:"false", human:"false", female:"false", musical:"false", male:"true"};
   const antiDon = {fName:"Anti-Matter Don West", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"true", female:"false", musical:"false", male:"true"};
   const hamish = {fName:"Hamish Rhu Glamis", doctor:"false", family:"false", age:"false", pilot:"false", military:"false", human:"true", female:"false", musical:"true", male:"true"};
-  var people = [john,maureen,don,judy,penny,will,smith,b9,tucker,athena,nobody,morbus,antiDon,hamish];
+  var people = [john,maureen,don,judy,penny,will,smith,b9,tucker,athena,nobody,willoughby,antiDon,hamish];
   var shortcut;
 
 
@@ -288,8 +288,8 @@ function forceGuess() {
       t11.text = "Mr. Nobody";
       var t12 = 
       document.createElement("option");
-      t12.setAttribute("id", "morbus");
-      t12.text = "Morbus";
+      t12.setAttribute("id", "willoughby");
+      t12.text = "Willoughby";
       var t13 = 
       document.createElement("option");
       t13.setAttribute("id", "antiDon");
@@ -362,8 +362,8 @@ function endgame() {
     if (shortcut === "nobodyPic") {
       userAns = "Mr. Nobody";
     }
-    if (shortcut === "morbusPic") {
-      userAns = "Morbus";
+    if (shortcut === "willoughbyPic") {
+      userAns = "Willoughby";
     }
     if (shortcut === "antidonPic") {
       userAns = "Anti-Matter Don West";
@@ -503,8 +503,8 @@ else {
   return;
 }
 }
-if (userAns == "Morbus") {
-  if (choice ==morbus) {
+if (userAns == "Willoughby") {
+  if (choice ==willoughby) {
   document.querySelector("#results").textContent = "You were right, it was " + choice.fName + "!!! Refresh the page to play again.";
   return;
 }
@@ -614,8 +614,8 @@ function pickDisplay() {
       t11.text = "Mr. Nobody";
       var t12 = 
       document.createElement("option");
-      t12.setAttribute("id", "morbus");
-      t12.text = "Morbus";
+      t12.setAttribute("id", "willoughby");
+      t12.text = "Willoughby";
       var t13 = 
       document.createElement("option");
       t13.setAttribute("id", "antiDon");
@@ -686,8 +686,8 @@ function pickDisplay() {
     if (rawPVC === nobody.fName) {
       playerVComputer = nobody;
     }
-    if (rawPVC === morbus.fName) {
-      playerVComputer = morbus;
+    if (rawPVC === willoughby.fName) {
+      playerVComputer = willoughby;
     }
     if (rawPVC === antiDon.fName) {
       playerVComputer = antiDon;
@@ -734,7 +734,6 @@ function pickDisplay() {
       people = remover(people, tucker);
       people = remover(people, athena);
       people = remover(people, nobody);
-      people = remover(people, morbus);
       people = remover(people, antiDon);
       people = remover(people, hamish);
 
@@ -745,6 +744,7 @@ function pickDisplay() {
         document.querySelector("#final").textContent = "No, this person is not a doctor.";
         people = remover(people, smith);
       people = remover(people, maureen);
+      people = remover(people, willoughby);
 
       }
     }
@@ -768,7 +768,7 @@ function pickDisplay() {
       people = remover(people, tucker);
       people = remover(people, athena);
       people = remover(people, nobody);
-      people = remover(people, morbus);
+      people = remover(people, willoughby);
       people = remover(people, antiDon);
       people = remover(people, hamish);
       document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
@@ -805,7 +805,7 @@ function pickDisplay() {
       people = remover(people, tucker);
       people = remover(people, athena);
       people = remover(people, nobody);
-      people = remover(people, morbus);
+      people = remover(people, willoughby);
       people = remover(people, antiDon);
       people = remover(people, hamish);
       document.querySelector("#final").textContent = "Yes, this person is a child!";
@@ -839,7 +839,7 @@ function pickDisplay() {
       people = remover(people, b9);
       people = remover(people, athena);
       people = remover(people, nobody);
-      people = remover(people, morbus);
+      people = remover(people, willoughby);
       people = remover(people, antiDon);
       people = remover(people, hamish);
       document.querySelector("#final").textContent = "Yes, this person is a pilot!";
@@ -873,7 +873,7 @@ function pickDisplay() {
       people = remover(people, b9);
       people = remover(people, athena);
       people = remover(people, nobody);
-      people = remover(people, morbus);
+      people = remover(people, willoughby);
       people = remover(people, antiDon);
       people = remover(people, hamish);
       document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
@@ -900,7 +900,7 @@ function pickDisplay() {
         people = remover(people, b9);
         people = remover(people, athena);
       people = remover(people, nobody);
-      people = remover(people, morbus);
+      people = remover(people, willoughby);
       
       document.querySelector("#final").textContent = "Yes, this person is human!";
 
@@ -940,7 +940,7 @@ function pickDisplay() {
       people = remover(people, b9);
       people = remover(people, tucker);
       people = remover(people, nobody);
-      people = remover(people, morbus);
+      people = remover(people, willoughby);
       people = remover(people, antiDon);
       people = remover(people, hamish);
       document.querySelector("#final").textContent = "Yes, this person is female!";
@@ -976,7 +976,7 @@ function pickDisplay() {
       people = remover(people, tucker);
       people = remover(people, athena);
       people = remover(people, nobody);
-      people = remover(people, morbus);
+      people = remover(people, willoughby);
       people = remover(people, antiDon);
       document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
 
@@ -1018,7 +1018,7 @@ function pickDisplay() {
       people = remover(people, b9);
       people = remover(people, tucker);
       people = remover(people, nobody);
-      people = remover(people, morbus);
+      people = remover(people, willoughby);
       people = remover(people, antiDon);
       people = remover(people, hamish);
       }
@@ -1057,304 +1057,304 @@ function pickDisplay() {
 
       if (playerVComputer.doctor === "true") {
 
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-
-        
-        document.querySelector("#final").textContent = "Yes, this person is a doctor!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a doctor.";
-        people = remover(people, smith);
-      people = remover(people, maureen);
-
-      }
-    }
-
-    if (currQ.question === "Is this a member of the Robinson family?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq2Value);
-
-      if (playerVComputer.family === "true") {
-
-      people = remover(people, don);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a member of the Robinson family.";
         people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      }
-    }
-
-    if (currQ.question === "Is this person a child?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq3Value);
-
-      if (playerVComputer.age === "true") {
-
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, maureen);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a child!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a child.";
-        people = remover(people, will);
-      people = remover(people, penny);
-      }
-    }
-
-    if (currQ.question === "Is this person a pilot?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq4Value);
-      
-      if (playerVComputer.pilot === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a pilot!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a pilot.";
         people = remover(people, don);
-      people = remover(people, tucker);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+  
+          
+          document.querySelector("#final").textContent = "Yes, this person is a doctor!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a doctor.";
+          people = remover(people, smith);
+        people = remover(people, maureen);
+        people = remover(people, willoughby);
+  
+        }
       }
-    }
-
-    if (currQ.question === "Is this person a member of the military?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq5Value);
-
-      if (playerVComputer.military === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, tucker);
-      people = remover(people, b9);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a member of the military.";
+  
+      if (currQ.question === "Is this a member of the Robinson family?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq2Value);
+  
+        if (playerVComputer.family === "true") {
+  
+        people = remover(people, don);
         people = remover(people, smith);
-      people = remover(people, don);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a member of the Robinson family.";
+          people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person human?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq6Value);
-
-      if (playerVComputer.human === "true") {
+  
+      if (currQ.question === "Is this person a child?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq3Value);
+  
+        if (playerVComputer.age === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, maureen);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a child!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a child.";
+          people = remover(people, will);
+        people = remover(people, penny);
+        }
+      }
+  
+      if (currQ.question === "Is this person a pilot?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq4Value);
+        
+        if (playerVComputer.pilot === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, smith);
         people = remover(people, b9);
         people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      
-      document.querySelector("#final").textContent = "Yes, this person is human!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not human.";
-        people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, tucker);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a pilot!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a pilot.";
+          people = remover(people, don);
+        people = remover(people, tucker);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person female?") {
+  
+      if (currQ.question === "Is this person a member of the military?") {
+  
+        function remover (arr, value) { 
       
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq7Value);
-    QQueue = remover(QQueue, Cq9Value);
-
-      if (playerVComputer.female === "true") {
-
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is female!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not female.";
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq5Value);
+  
+        if (playerVComputer.military === "true") {
+  
+        people = remover(people, john);
         people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, athena);
-      }
-    }
-
-    if (currQ.question === "Does this person play a musical instrument?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq8Value);
-
-      if (playerVComputer.musical === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, smith);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person does not play a musical instrument.";
+        people = remover(people, judy);
+        people = remover(people, penny);
         people = remover(people, will);
-      people = remover(people, b9);
-      people = remover(people, hamish);
-
+        people = remover(people, tucker);
+        people = remover(people, b9);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a member of the military.";
+          people = remover(people, smith);
+        people = remover(people, don);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person male?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq9Value);
+  
+      if (currQ.question === "Is this person human?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq6Value);
+  
+        if (playerVComputer.human === "true") {
+          people = remover(people, b9);
+          people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        
+        document.querySelector("#final").textContent = "Yes, this person is human!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not human.";
+          people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, tucker);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        }
+      }
+  
+      if (currQ.question === "Is this person female?") {
+        
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
       QQueue = remover(QQueue, Cq7Value);
-    
-      if (playerVComputer.male === "true") {
-
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, athena);
-      document.querySelector("#final").textContent = "Yes, this person is male!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not male.";
+      QQueue = remover(QQueue, Cq9Value);
+  
+        if (playerVComputer.female === "true") {
+  
         people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
+        people = remover(people, don);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is female!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not female.";
+          people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, athena);
+        }
       }
-    }
+  
+      if (currQ.question === "Does this person play a musical instrument?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+      QQueue = remover(QQueue, Cq8Value);
+  
+        if (playerVComputer.musical === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, smith);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person does not play a musical instrument.";
+          people = remover(people, will);
+        people = remover(people, b9);
+        people = remover(people, hamish);
+  
+        }
+      }
+  
+      if (currQ.question === "Is this person male?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+      QQueue = remover(QQueue, Cq9Value);
+        QQueue = remover(QQueue, Cq7Value);
+      
+        if (playerVComputer.male === "true") {
+  
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, athena);
+        document.querySelector("#final").textContent = "Yes, this person is male!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not male.";
+          people = remover(people, john);
+        people = remover(people, don);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        }
+      }
 
 
     var nB =
@@ -1390,304 +1390,304 @@ function pickDisplay() {
 
       if (playerVComputer.doctor === "true") {
 
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-
-        
-        document.querySelector("#final").textContent = "Yes, this person is a doctor!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a doctor.";
-        people = remover(people, smith);
-      people = remover(people, maureen);
-
-      }
-    }
-
-    if (currQ.question === "Is this a member of the Robinson family?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq2Value);
-
-      if (playerVComputer.family === "true") {
-
-      people = remover(people, don);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a member of the Robinson family.";
         people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      }
-    }
-
-    if (currQ.question === "Is this person a child?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq3Value);
-
-      if (playerVComputer.age === "true") {
-
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, maureen);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a child!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a child.";
-        people = remover(people, will);
-      people = remover(people, penny);
-      }
-    }
-
-    if (currQ.question === "Is this person a pilot?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq4Value);
-      
-      if (playerVComputer.pilot === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a pilot!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a pilot.";
         people = remover(people, don);
-      people = remover(people, tucker);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+  
+          
+          document.querySelector("#final").textContent = "Yes, this person is a doctor!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a doctor.";
+          people = remover(people, smith);
+        people = remover(people, maureen);
+        people = remover(people, willoughby);
+  
+        }
       }
-    }
-
-    if (currQ.question === "Is this person a member of the military?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq5Value);
-
-      if (playerVComputer.military === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, tucker);
-      people = remover(people, b9);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a member of the military.";
+  
+      if (currQ.question === "Is this a member of the Robinson family?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq2Value);
+  
+        if (playerVComputer.family === "true") {
+  
+        people = remover(people, don);
         people = remover(people, smith);
-      people = remover(people, don);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a member of the Robinson family.";
+          people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person human?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq6Value);
-
-      if (playerVComputer.human === "true") {
+  
+      if (currQ.question === "Is this person a child?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq3Value);
+  
+        if (playerVComputer.age === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, maureen);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a child!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a child.";
+          people = remover(people, will);
+        people = remover(people, penny);
+        }
+      }
+  
+      if (currQ.question === "Is this person a pilot?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq4Value);
+        
+        if (playerVComputer.pilot === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, smith);
         people = remover(people, b9);
         people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      
-      document.querySelector("#final").textContent = "Yes, this person is human!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not human.";
-        people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, tucker);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a pilot!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a pilot.";
+          people = remover(people, don);
+        people = remover(people, tucker);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person female?") {
+  
+      if (currQ.question === "Is this person a member of the military?") {
+  
+        function remover (arr, value) { 
       
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq7Value);
-    QQueue = remover(QQueue, Cq9Value);
-
-      if (playerVComputer.female === "true") {
-
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is female!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not female.";
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq5Value);
+  
+        if (playerVComputer.military === "true") {
+  
+        people = remover(people, john);
         people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, athena);
-      }
-    }
-
-    if (currQ.question === "Does this person play a musical instrument?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq8Value);
-
-      if (playerVComputer.musical === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, smith);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person does not play a musical instrument.";
+        people = remover(people, judy);
+        people = remover(people, penny);
         people = remover(people, will);
-      people = remover(people, b9);
-      people = remover(people, hamish);
-
+        people = remover(people, tucker);
+        people = remover(people, b9);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a member of the military.";
+          people = remover(people, smith);
+        people = remover(people, don);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person male?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq9Value);
+  
+      if (currQ.question === "Is this person human?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq6Value);
+  
+        if (playerVComputer.human === "true") {
+          people = remover(people, b9);
+          people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        
+        document.querySelector("#final").textContent = "Yes, this person is human!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not human.";
+          people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, tucker);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        }
+      }
+  
+      if (currQ.question === "Is this person female?") {
+        
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
       QQueue = remover(QQueue, Cq7Value);
-    
-      if (playerVComputer.male === "true") {
-
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, athena);
-      document.querySelector("#final").textContent = "Yes, this person is male!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not male.";
+      QQueue = remover(QQueue, Cq9Value);
+  
+        if (playerVComputer.female === "true") {
+  
         people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
+        people = remover(people, don);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is female!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not female.";
+          people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, athena);
+        }
       }
-    }
+  
+      if (currQ.question === "Does this person play a musical instrument?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+      QQueue = remover(QQueue, Cq8Value);
+  
+        if (playerVComputer.musical === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, smith);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person does not play a musical instrument.";
+          people = remover(people, will);
+        people = remover(people, b9);
+        people = remover(people, hamish);
+  
+        }
+      }
+  
+      if (currQ.question === "Is this person male?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+      QQueue = remover(QQueue, Cq9Value);
+        QQueue = remover(QQueue, Cq7Value);
+      
+        if (playerVComputer.male === "true") {
+  
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, athena);
+        document.querySelector("#final").textContent = "Yes, this person is male!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not male.";
+          people = remover(people, john);
+        people = remover(people, don);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        }
+      }
 
 
     var nB =
@@ -1723,305 +1723,304 @@ function pickDisplay() {
 
       if (playerVComputer.doctor === "true") {
 
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-
-        
-        document.querySelector("#final").textContent = "Yes, this person is a doctor!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a doctor.";
-        people = remover(people, smith);
-      people = remover(people, maureen);
-
-      }
-    }
-
-    if (currQ.question === "Is this a member of the Robinson family?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq2Value);
-
-      if (playerVComputer.family === "true") {
-
-      people = remover(people, don);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a member of the Robinson family.";
         people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      }
-    }
-
-    if (currQ.question === "Is this person a child?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq3Value);
-
-      if (playerVComputer.age === "true") {
-
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, maureen);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a child!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a child.";
-        people = remover(people, will);
-      people = remover(people, penny);
-      }
-    }
-
-    if (currQ.question === "Is this person a pilot?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq4Value);
-      
-      if (playerVComputer.pilot === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a pilot!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a pilot.";
         people = remover(people, don);
-      people = remover(people, tucker);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+  
+          
+          document.querySelector("#final").textContent = "Yes, this person is a doctor!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a doctor.";
+          people = remover(people, smith);
+        people = remover(people, maureen);
+        people = remover(people, willoughby);
+  
+        }
       }
-    }
-
-    if (currQ.question === "Is this person a member of the military?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq5Value);
-
-      if (playerVComputer.military === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, tucker);
-      people = remover(people, b9);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a member of the military.";
+  
+      if (currQ.question === "Is this a member of the Robinson family?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq2Value);
+  
+        if (playerVComputer.family === "true") {
+  
+        people = remover(people, don);
         people = remover(people, smith);
-      people = remover(people, don);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a member of the Robinson family.";
+          people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person human?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq6Value);
-
-      if (playerVComputer.human === "true") {
+  
+      if (currQ.question === "Is this person a child?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq3Value);
+  
+        if (playerVComputer.age === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, maureen);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a child!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a child.";
+          people = remover(people, will);
+        people = remover(people, penny);
+        }
+      }
+  
+      if (currQ.question === "Is this person a pilot?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq4Value);
+        
+        if (playerVComputer.pilot === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, smith);
         people = remover(people, b9);
         people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      
-      document.querySelector("#final").textContent = "Yes, this person is human!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not human.";
-        people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, tucker);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a pilot!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a pilot.";
+          people = remover(people, don);
+        people = remover(people, tucker);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person female?") {
+  
+      if (currQ.question === "Is this person a member of the military?") {
+  
+        function remover (arr, value) { 
       
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq7Value);
-    QQueue = remover(QQueue, Cq9Value);
-
-      if (playerVComputer.female === "true") {
-
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is female!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not female.";
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq5Value);
+  
+        if (playerVComputer.military === "true") {
+  
+        people = remover(people, john);
         people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, athena);
-      }
-    }
-
-    if (currQ.question === "Does this person play a musical instrument?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq8Value);
-
-      if (playerVComputer.musical === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, smith);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person does not play a musical instrument.";
+        people = remover(people, judy);
+        people = remover(people, penny);
         people = remover(people, will);
-      people = remover(people, b9);
-      people = remover(people, hamish);
-
+        people = remover(people, tucker);
+        people = remover(people, b9);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a member of the military.";
+          people = remover(people, smith);
+        people = remover(people, don);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person male?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq9Value);
+  
+      if (currQ.question === "Is this person human?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq6Value);
+  
+        if (playerVComputer.human === "true") {
+          people = remover(people, b9);
+          people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        
+        document.querySelector("#final").textContent = "Yes, this person is human!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not human.";
+          people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, tucker);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        }
+      }
+  
+      if (currQ.question === "Is this person female?") {
+        
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
       QQueue = remover(QQueue, Cq7Value);
-    
-      if (playerVComputer.male === "true") {
-
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, athena);
-      document.querySelector("#final").textContent = "Yes, this person is male!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not male.";
+      QQueue = remover(QQueue, Cq9Value);
+  
+        if (playerVComputer.female === "true") {
+  
         people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
+        people = remover(people, don);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is female!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not female.";
+          people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, athena);
+        }
       }
-    }
-
+  
+      if (currQ.question === "Does this person play a musical instrument?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+      QQueue = remover(QQueue, Cq8Value);
+  
+        if (playerVComputer.musical === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, smith);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person does not play a musical instrument.";
+          people = remover(people, will);
+        people = remover(people, b9);
+        people = remover(people, hamish);
+  
+        }
+      }
+  
+      if (currQ.question === "Is this person male?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+      QQueue = remover(QQueue, Cq9Value);
+        QQueue = remover(QQueue, Cq7Value);
+      
+        if (playerVComputer.male === "true") {
+  
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, athena);
+        document.querySelector("#final").textContent = "Yes, this person is male!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not male.";
+          people = remover(people, john);
+        people = remover(people, don);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        }
+      }
 
     var nB =
       document.createElement("button");
@@ -2056,304 +2055,304 @@ function pickDisplay() {
 
       if (playerVComputer.doctor === "true") {
 
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-
-        
-        document.querySelector("#final").textContent = "Yes, this person is a doctor!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a doctor.";
-        people = remover(people, smith);
-      people = remover(people, maureen);
-
-      }
-    }
-
-    if (currQ.question === "Is this a member of the Robinson family?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq2Value);
-
-      if (playerVComputer.family === "true") {
-
-      people = remover(people, don);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a member of the Robinson family.";
         people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      }
-    }
-
-    if (currQ.question === "Is this person a child?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq3Value);
-
-      if (playerVComputer.age === "true") {
-
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, maureen);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a child!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a child.";
-        people = remover(people, will);
-      people = remover(people, penny);
-      }
-    }
-
-    if (currQ.question === "Is this person a pilot?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq4Value);
-      
-      if (playerVComputer.pilot === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a pilot!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a pilot.";
         people = remover(people, don);
-      people = remover(people, tucker);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+  
+          
+          document.querySelector("#final").textContent = "Yes, this person is a doctor!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a doctor.";
+          people = remover(people, smith);
+        people = remover(people, maureen);
+        people = remover(people, willoughby);
+  
+        }
       }
-    }
-
-    if (currQ.question === "Is this person a member of the military?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq5Value);
-
-      if (playerVComputer.military === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, tucker);
-      people = remover(people, b9);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not a member of the military.";
+  
+      if (currQ.question === "Is this a member of the Robinson family?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq2Value);
+  
+        if (playerVComputer.family === "true") {
+  
+        people = remover(people, don);
         people = remover(people, smith);
-      people = remover(people, don);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a member of the Robinson family!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a member of the Robinson family.";
+          people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person human?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-      QQueue = remover(QQueue, Cq6Value);
-
-      if (playerVComputer.human === "true") {
+  
+      if (currQ.question === "Is this person a child?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq3Value);
+  
+        if (playerVComputer.age === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, maureen);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a child!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a child.";
+          people = remover(people, will);
+        people = remover(people, penny);
+        }
+      }
+  
+      if (currQ.question === "Is this person a pilot?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq4Value);
+        
+        if (playerVComputer.pilot === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, smith);
         people = remover(people, b9);
         people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      
-      document.querySelector("#final").textContent = "Yes, this person is human!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not human.";
-        people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, tucker);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a pilot!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a pilot.";
+          people = remover(people, don);
+        people = remover(people, tucker);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person female?") {
+  
+      if (currQ.question === "Is this person a member of the military?") {
+  
+        function remover (arr, value) { 
       
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq7Value);
-    QQueue = remover(QQueue, Cq9Value);
-
-      if (playerVComputer.female === "true") {
-
-      people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
-      document.querySelector("#final").textContent = "Yes, this person is female!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not female.";
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq5Value);
+  
+        if (playerVComputer.military === "true") {
+  
+        people = remover(people, john);
         people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, athena);
-      }
-    }
-
-    if (currQ.question === "Does this person play a musical instrument?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq8Value);
-
-      if (playerVComputer.musical === "true") {
-
-      people = remover(people, john);
-      people = remover(people, maureen);
-      people = remover(people, don);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, smith);
-      people = remover(people, tucker);
-      people = remover(people, athena);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person does not play a musical instrument.";
+        people = remover(people, judy);
+        people = remover(people, penny);
         people = remover(people, will);
-      people = remover(people, b9);
-      people = remover(people, hamish);
-
+        people = remover(people, tucker);
+        people = remover(people, b9);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is a member of the military!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not a member of the military.";
+          people = remover(people, smith);
+        people = remover(people, don);
+        }
       }
-    }
-
-    if (currQ.question === "Is this person male?") {
-
-      function remover (arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    QQueue = remover(QQueue, Cq9Value);
+  
+      if (currQ.question === "Is this person human?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+        QQueue = remover(QQueue, Cq6Value);
+  
+        if (playerVComputer.human === "true") {
+          people = remover(people, b9);
+          people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        
+        document.querySelector("#final").textContent = "Yes, this person is human!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not human.";
+          people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, tucker);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        }
+      }
+  
+      if (currQ.question === "Is this person female?") {
+        
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
       QQueue = remover(QQueue, Cq7Value);
-    
-      if (playerVComputer.male === "true") {
-
-      people = remover(people, maureen);
-      people = remover(people, judy);
-      people = remover(people, penny);
-      people = remover(people, athena);
-      document.querySelector("#final").textContent = "Yes, this person is male!";
-
-      } else {
-        document.querySelector("#final").textContent = "No, this person is not male.";
+      QQueue = remover(QQueue, Cq9Value);
+  
+        if (playerVComputer.female === "true") {
+  
         people = remover(people, john);
-      people = remover(people, don);
-      people = remover(people, will);
-      people = remover(people, smith);
-      people = remover(people, b9);
-      people = remover(people, tucker);
-      people = remover(people, nobody);
-      people = remover(people, morbus);
-      people = remover(people, antiDon);
-      people = remover(people, hamish);
+        people = remover(people, don);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        document.querySelector("#final").textContent = "Yes, this person is female!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not female.";
+          people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, athena);
+        }
       }
-    }
+  
+      if (currQ.question === "Does this person play a musical instrument?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+      QQueue = remover(QQueue, Cq8Value);
+  
+        if (playerVComputer.musical === "true") {
+  
+        people = remover(people, john);
+        people = remover(people, maureen);
+        people = remover(people, don);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, smith);
+        people = remover(people, tucker);
+        people = remover(people, athena);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        document.querySelector("#final").textContent = "Yes, this person plays a musical instrument!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person does not play a musical instrument.";
+          people = remover(people, will);
+        people = remover(people, b9);
+        people = remover(people, hamish);
+  
+        }
+      }
+  
+      if (currQ.question === "Is this person male?") {
+  
+        function remover (arr, value) { 
+      
+          return arr.filter(function(ele){ 
+              return ele != value; 
+          });
+      }
+  
+      QQueue = remover(QQueue, Cq9Value);
+        QQueue = remover(QQueue, Cq7Value);
+      
+        if (playerVComputer.male === "true") {
+  
+        people = remover(people, maureen);
+        people = remover(people, judy);
+        people = remover(people, penny);
+        people = remover(people, athena);
+        document.querySelector("#final").textContent = "Yes, this person is male!";
+  
+        } else {
+          document.querySelector("#final").textContent = "No, this person is not male.";
+          people = remover(people, john);
+        people = remover(people, don);
+        people = remover(people, will);
+        people = remover(people, smith);
+        people = remover(people, b9);
+        people = remover(people, tucker);
+        people = remover(people, nobody);
+        people = remover(people, willoughby);
+        people = remover(people, antiDon);
+        people = remover(people, hamish);
+        }
+      }
 
     var nB =
       document.createElement("button");
