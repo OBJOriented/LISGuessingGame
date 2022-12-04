@@ -1024,6 +1024,10 @@ function pickDisplay() {
       }
     }
 
+    if (people.length <= 0) {
+      computerEndgame();
+    }
+
     var nB =
       document.createElement("button");
       nB.setAttribute("id", "next");
@@ -1354,6 +1358,10 @@ function pickDisplay() {
         people = remover(people, antiDon);
         people = remover(people, hamish);
         }
+      }
+
+      if (people.length <= 0) {
+        computerEndgame();
       }
 
 
@@ -1689,6 +1697,10 @@ function pickDisplay() {
         }
       }
 
+      if (people.length <= 0) {
+        computerEndgame();
+      }
+
 
     var nB =
       document.createElement("button");
@@ -2022,6 +2034,10 @@ function pickDisplay() {
         }
       }
 
+      if (people.length <= 0) {
+        computerEndgame();
+      }
+
     var nB =
       document.createElement("button");
       nB.setAttribute("id", "next");
@@ -2352,6 +2368,10 @@ function pickDisplay() {
         people = remover(people, antiDon);
         people = remover(people, hamish);
         }
+      }
+
+      if (people.length <= 0) {
+        computerEndgame();
       }
 
     var nB =
